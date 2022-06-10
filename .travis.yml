@@ -5,7 +5,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t irwaank/client_test -f ./client/Dockerfile.dev .
+  - docker build -t irwaank/client_test -f ./client/Dockerfile.dev ./client
 
 script:
   - docker run -e CI=true irwaank/client_test npm run test -- --coverage
